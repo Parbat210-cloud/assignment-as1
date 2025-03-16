@@ -1,0 +1,137 @@
+body {
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Header for Desktop */
+  header {
+    padding: 1rem 2rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.75rem;
+  }
+  
+  /* Hide hamburger menu and checkbox on desktop */
+  .hamburger, header input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Reset nav styles for desktop */
+  nav {
+    position: static;
+    max-height: none;
+    width: auto;
+    overflow: visible;
+    background-color: transparent;
+  }
+  
+  nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  nav li {
+    width: auto;
+  }
+  
+  nav a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    width: auto;
+  }
+  
+  /* Home Page Layout */
+  main section:first-of-type {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .profile-img {
+    max-width: 300px;
+    justify-self: center;
+  }
+  
+  /* Projects Layout */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .project-card {
+    display: grid;
+    grid-template-areas:
+      "image info";
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .project-image {
+    grid-area: image;
+  }
+  
+  .project-info {
+    grid-area: info;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Featured project can be full width */
+  .project-card.featured {
+    grid-template-areas:
+      "image info";
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Contact Layout */
+  .contact-content {
+    display: grid;
+    grid-template-areas:
+      "info form";
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+  }
+  
+  .contact-info {
+    grid-area: info;
+  }
+  
+  .contact-form {
+    grid-area: form;
+  }
+  
+  /* Site Report Layout */
+  .report-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .validation-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  /* Footer */
+  footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .social-links {
+    margin-top: 0;
+  }

@@ -1,0 +1,123 @@
+
+body {
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  main {
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Header and Navigation for Mobile */
+  header {
+    position: relative;
+  }
+  
+  /* Create a hidden checkbox for the hamburger menu */
+  header input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Hamburger icon */
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hide the regular nav by default */
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #1a365d;
+    transition: max-height 0.5s ease;
+  }
+  
+  /* Show navigation when checkbox is checked */
+  header input[type="checkbox"]:checked ~ nav {
+    max-height: 300px; /* Adjust based on your menu height */
+  }
+  
+  /* Transform hamburger to X when menu is open */
+  header input[type="checkbox"]:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  header input[type="checkbox"]:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  header input[type="checkbox"]:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  
+  nav li {
+    width: 100%;
+  }
+  
+  nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+  
+  /* Projects Layout */
+  .project-card {
+    display: grid;
+    grid-template-areas:
+      "image"
+      "info";
+  }
+  
+  .project-image {
+    grid-area: image;
+  }
+  
+  .project-info {
+    grid-area: info;
+  }
+  
+  /* Contact Layout */
+  .contact-content {
+    display: grid;
+    grid-template-areas:
+      "info"
+      "form";
+    gap: 2rem;
+  }
+  
+  .contact-info {
+    grid-area: info;
+  }
+  
+  .contact-form {
+    grid-area: form;
+  }
+  
+  /* Social Contact */
+  .social-contact ul {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
